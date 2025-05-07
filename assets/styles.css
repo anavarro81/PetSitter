@@ -1,0 +1,54 @@
+/* Estable medidas en REM */
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+/* Black & White Palette */
+    --B-W-0: #ffffff;
+    --B-W-100: #EBEBEB;
+    --B-W-400: #B2B2B2;
+    --B-W-500: #828282;
+    --B-W-600: #444444;
+    --B-W-700: #000000;
+
+/* Organge Palette */
+    --Orange-0: #f6ebde;
+    --Orange-100: #f0ae63;
+    --Orange-200: #e58c27;
+    --Orage-300: #cf6a00;
+    --Orage-400: #b05e00;
+
+/* Violete Palette */    
+    --Violet-0: #f0ebf0;
+    --Violet-100: #d6a3d6;
+    --Violet-200: #dd4c9a;
+    --Violet-300: #71216a;
+    --Violet-400: #44074a;
+
+/* Green     Palette */    
+    --Green-0: #fffef5;
+    --Green-100: #f7f28d;
+    --Green-200: #c9c562;
+    --Green-300: #bdb51d;
+    --Green-400: #97b86f;
+
+    --max-width: 240rem;
+    --content-width: 148rem;
+
+    --primary-font: 'Cormorant', serif;
+    --secundary-font: 'Montserrat', sans-serif;
+
+
+}
+
+body {
+    background-color: var(--Orange-200);
+}
