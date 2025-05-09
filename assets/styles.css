@@ -1,54 +1,186 @@
 /* Estable medidas en REM */
 html {
-    /* 1rem = 10px */
-    font-size: 62.5%;
+  /* 1rem = 10px */
+  font-size: 62.5%;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 :root {
-/* Black & White Palette */
-    --B-W-0: #ffffff;
-    --B-W-100: #EBEBEB;
-    --B-W-400: #B2B2B2;
-    --B-W-500: #828282;
-    --B-W-600: #444444;
-    --B-W-700: #000000;
+  /* Black & White Palette */
+  --B-W-0: #ffffff;
+  --B-W-100: #ebebeb;
+  --B-W-400: #b2b2b2;
+  --B-W-500: #828282;
+  --B-W-600: #444444;
+  --B-W-700: #000000;
 
-/* Organge Palette */
-    --Orange-0: #f6ebde;
-    --Orange-100: #f0ae63;
-    --Orange-200: #e58c27;
-    --Orage-300: #cf6a00;
-    --Orage-400: #b05e00;
+  /* Organge Palette */
+  --Orange-0: #f6ebde;
+  --Orange-100: #f0ae63;
+  --Orange-200: #e58c27;
+  --Orage-300: #cf6a00;
+  --Orage-400: #b05e00;
 
-/* Violete Palette */    
-    --Violet-0: #f0ebf0;
-    --Violet-100: #d6a3d6;
-    --Violet-200: #dd4c9a;
-    --Violet-300: #71216a;
-    --Violet-400: #44074a;
+  /* Violete Palette */
+  --Violet-0: #f0ebf0;
+  --Violet-100: #d6a3d6;
+  --Violet-200: #dd4c9a;
+  --Violet-300: #71216a;
+  --Violet-400: #44074a;
 
-/* Green     Palette */    
-    --Green-0: #fffef5;
-    --Green-100: #f7f28d;
-    --Green-200: #c9c562;
-    --Green-300: #bdb51d;
-    --Green-400: #97b86f;
+  /* Green     Palette */
+  --Green-0: #fffef5;
+  --Green-100: #f7f28d;
+  --Green-200: #c9c562;
+  --Green-300: #bdb51d;
+  --Green-400: #97b86f;
 
-    --max-width: 240rem;
-    --content-width: 148rem;
+  --max-width: 240rem;
+  --content-width: 148rem;
 
-    --primary-font: 'Cormorant', serif;
-    --secundary-font: 'Montserrat', sans-serif;
+  --primary-font: "Cormorant", serif;
+  --secundary-font: "Montserrat", sans-serif;
+}
 
+.main-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
+.content-wrapper {
+  max-width: var(--content-width);
 }
 
 body {
-    background-color: var(--Orange-200);
+  font-family: var(--secundary-font);
+  color: var(--B-W-700);
+}
+
+/************************************ General Fonts **************************************/
+
+.vet_h1 {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 6.5rem;
+}
+
+.vet_ag-rg2 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.vet_sub1 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+
+.vet_h2 {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 5.5rem;
+  line-height: 90%;
+}
+
+.vet_reg1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+/* Frame 1000002570 */
+
+/*****************************Section 1************************************/
+
+.vet-header__first-block {
+  display: flex;
+  gap: 4rem;
+}
+
+.vet-section-one__first-block--img {
+  border-radius: 3rem;
+  overflow: hidden;
+}
+
+.vet-section-one__first-block--img:first-of-type {
+  width: 65%;
+  position: relative;
+  aspect-ratio: 917/603;
+}
+
+.vet-section-one__first-block--img:first-of-type img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.vet-section-one__first-block--img:last-of-type {
+  width: 35%;
+}
+
+.vet-section-one__first-block--img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.vet-section-one__second-block {
+  display: flex;
+  gap: 4.6rem;
+}
+
+.vet-section-one__second-block > div {
+  width: 50%;
+  margin-top: 4rem;
+}
+
+/********************************Media Queries *****************************************/
+
+/* smaller destoks */
+
+@media (max-width: 82em) {
+}
+
+/* Bellow 1200px Land Scape tablets */
+
+@media (max-width: 75em) {
+  html {
+    /* 9/16 */
+    font-size: 56.25%;
+  }
+}
+
+/* Bellow 944px  tablets */
+
+@media (max-width: 59em) {
+  html {
+    /* 8/16 */
+    font-size: 50%;
+  }
+}
+
+/* Bellow 700px  Small tablets */
+@media (max-width: 44em) {
+}
+
+/* Bellow 544px  phones */
+@media (max-width: 34em) {
 }
