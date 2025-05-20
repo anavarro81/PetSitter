@@ -124,6 +124,13 @@ body {
   line-height: 90%;
 }
 
+.vet_h3 {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 90%;
+}
+
 .vet_reg1 {
   font-weight: 400;
   font-size: 1.8rem;
@@ -267,11 +274,51 @@ body {
 
 .vet-section-two--second-block {
   flex: 1;
+  
 }
 
 .vet-section-two--pagination {
   height: 11.8rem;
 }
+
+
+.vet-section-two--second-block--element {
+  display: flex;
+  flex-direction: column;  
+  gap: 1.5rem;
+  padding: 0 2.5rem;
+  background-color: #fff;
+  border-radius: 2.5rem;
+
+}
+
+.vet-section-two--second-block--element__icon {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;}
+
+.vet-section-two--second-block--element__ownerName{
+  color: var(--Violet-300);
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}  
+  
+.vet-section-two--second-block--grid-container {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  grid-template-rows: auto auto; /* Dos filas (altura automática) */
+  gap: 2.5rem; /* Espacio entre celdas (opcional) */
+}
+
+
+  
+  
+
 /********************************Media Queries *****************************************/
 
 /* smaller destoks */
