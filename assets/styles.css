@@ -17,6 +17,10 @@ img {
   object-fit: cover;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* Black & White Palette */
   --B-W-0: #ffffff;
@@ -79,6 +83,10 @@ body {
 .section-filler {
   width: 100%;
   height: 30rem;
+}
+
+.flex {
+  display: flex;
 }
 
 
@@ -159,6 +167,17 @@ body {
   text-decoration: none; /* Esto quita el subrayado */
 }
 
+.vet-contact--button-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.3rem;
+  background-color: var(--Violet-400);
+  border-radius: 10rem;
+  color: #fff;
+
+}
+
 /*****************************Section 1************************************/
 
 .vet-header__first-block {
@@ -215,15 +234,8 @@ body {
   max-width: 52.8rem;
 }
 
-.vet-section-one__first-block--img__button {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2.3rem;
-  background-color: var(--Violet-400);
-  border-radius: 10rem;
-  color: #fff;
-}
+
+
 
 /****************TESTIMONIOS*********************************/
 
@@ -301,6 +313,107 @@ body {
   gap: 2.5rem; /* Espacio entre celdas (opcional) */
 }
 
+
+/* TODO */
+/**************************** About Me section  **************************************/
+
+.vet_aboutMe_containner {
+  display: flex;
+  justify-content: space-between;     
+  gap: 4rem;
+  margin: 4.4rem 4rem;                        
+  
+}
+
+
+.vet_aboutMe_left_side {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem; 
+  gap: 2.5rem;
+  border: 1px solid #B2B2B2;
+  border-radius: 25px;
+  align-items: center;
+  
+}
+
+.vet_aboutMe_right_side {  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+  gap: 2.5rem;
+  border: 1px solid #B2B2B2;
+  border-radius: 25px;
+
+  
+
+}
+
+
+.vet_aboutMe_left_side--social {
+  display: flex; 
+  gap: 1rem;
+}
+
+.vet-aboutMe_right_side--dwnloadButton--container {
+  display: flex;
+  justify-content: end;
+}
+
+.vet_aboutMe_right_side--dwnloadButton {
+  display: flex;
+  flex-direction: row;
+  padding: 2.5rem 1.5rem;
+  color: var(--Violet-400);
+  border: 1px solid #44074A;
+  border-radius: 100px;
+  align-items: center;
+
+}
+
+
+
+/******************************** section five *****************************************/
+
+.vet-section-five {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 5rem;
+}
+
+.vet-section-five__image-overlay { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Green-200);
+  z-index: -1;
+  img {
+    object-fit: cover;
+  }
+
+}
+
+.vet-section-five__frist-block {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+  
+}
+
+
+
+
 /******************************** Footer *****************************************/
 
 .vet-footer--wrapper {
@@ -363,4 +476,16 @@ body {
 
 /* Bellow 544px  phones */
 @media (max-width: 34em) {
+  .vet_aboutMe_containner {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vet-footer--wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vet-footer--social {
+    margin-top: 5rem;
+  }
 }
