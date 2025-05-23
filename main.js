@@ -1,29 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
+// import commentsData from './data/comment.js';
 
-  const commentaryWrapper = document.getElementById('commentary-block-89');
-  console.log(commentaryWrapper);
+console.log('>> commentsData', commentsData);
 
-  const testimonialBox = `<div class="vet-section-two--second-block--element">
+const getTestimonialBox = (name, stars, comment) => {
+
+    return  `<div class="vet-section-two--second-block--element">
           <div class="vet-section-two--second-block--element__icon">            
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M24.0106 4.78123C24.1019 4.59678 24.2429 4.44151 24.4178 4.33295C24.5926 4.22439 24.7944 4.16687 25.0002 4.16687C25.206 4.16687 25.4077 4.22439 25.5826 4.33295C25.7574 4.44151 25.8985 4.59678 25.9898 4.78123L30.8023 14.5291C31.1193 15.1707 31.5873 15.7258 32.1661 16.1468C32.7448 16.5677 33.4171 16.8419 34.1252 16.9458L44.8877 18.5208C45.0916 18.5504 45.2832 18.6364 45.4408 18.7691C45.5984 18.9019 45.7156 19.0761 45.7794 19.2721C45.8431 19.468 45.8507 19.6779 45.8014 19.878C45.752 20.078 45.6477 20.2603 45.5002 20.4041L37.7168 27.9833C37.2035 28.4835 36.8195 29.101 36.5977 29.7825C36.376 30.4641 36.3232 31.1893 36.4439 31.8958L38.2814 42.6041C38.3174 42.808 38.2954 43.0178 38.2179 43.2097C38.1403 43.4017 38.0104 43.5679 37.843 43.6896C37.6755 43.8112 37.4772 43.8833 37.2707 43.8977C37.0642 43.912 36.8579 43.8681 36.6752 43.7708L27.0543 38.7125C26.4204 38.3796 25.7151 38.2057 24.9991 38.2057C24.2831 38.2057 23.5778 38.3796 22.9439 38.7125L13.3252 43.7708C13.1425 43.8675 12.9364 43.911 12.7303 43.8963C12.5241 43.8817 12.3262 43.8095 12.1591 43.6879C11.992 43.5664 11.8623 43.4004 11.7849 43.2088C11.7074 43.0172 11.6853 42.8077 11.721 42.6041L13.5564 31.8979C13.6777 31.1911 13.6251 30.4654 13.4034 29.7834C13.1816 29.1014 12.7973 28.4836 12.2835 27.9833L4.50017 20.4062C4.35141 20.2625 4.24599 20.08 4.19592 19.8793C4.14586 19.6786 4.15316 19.4679 4.217 19.2712C4.28084 19.0745 4.39864 18.8997 4.557 18.7666C4.71535 18.6336 4.90788 18.5477 5.11267 18.5187L15.8731 16.9458C16.582 16.8427 17.2551 16.5689 17.8347 16.1479C18.4143 15.7269 18.8829 15.1714 19.2002 14.5291L24.0106 4.78123Z"
                   stroke="#71216A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span class="vet_h3"> 5 / 5 </span>
+              <span class="vet_h3"> ${stars} / 5 </span>
           </div>            
             <p class="vet_reg1">            
-              Olga es una excelente paseadora. Su experiencia como auxiliar veterinaria se nota en cómo maneja a los
-              perros. Mi Toby regresa feliz y cansado de sus paseos. ¡Totalmente recomendada!
+              ${comment}
             </p>
-            <p class="vet-section-two--second-block--element__ownerName"> María Gómez </p>       
+            <p class="vet-section-two--second-block--element__ownerName"> ${name} </p>       
         </div>`
 
-  for (let i = 0; i < 5; i++) {
 
-    commentaryWrapper.innerHTML += testimonialBox;
+}
 
-  }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const commentaryWrapper = document.getElementById('commentary-block-89');
+  console.log(commentaryWrapper);
+
+
+
+
+  commentsData.forEach(element => {
+    const { name, stars, comment } = element;
+
+    console.log('name', name);
+    console.log('stars', stars);  
+    console.log('comment', comment);    
+
+
+    commentaryWrapper.innerHTML += getTestimonialBox(name, stars, comment);
+  })
 
 
 //   const createCommentaries = () => {

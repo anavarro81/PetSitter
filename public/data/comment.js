@@ -1,72 +1,94 @@
 const commentsData = [
     {
-        "name": "María Gómez",
+        "name": "Carmen",
         "stars": 5,
-        "comment": "Olga es una excelente paseadora. Su experiencia como auxiliar veterinaria se nota en cómo maneja a los perros. Mi Toby regresa feliz y cansado de sus paseos. ¡Totalmente recomendada!"
+        "comment": "De Olga no puedo decir nada más que es una profesional como la copa de un pino. Cariñosa, súper amante de los animales, atenta en todas sus cosas, te va informando continuamente como está mi mascota y la quieren. Total un 10"
     },
     {
-        "name": "Carlos Ruiz",
+        "name": "Rosa",
         "stars": 5,
-        "comment": "Desde que contraté los servicios de Olga, mi Luna está más equilibrada y feliz. Me encanta que me envía fotos durante el paseo y siempre está pendiente de cualquier detalle. Su formación veterinaria me da mucha tranquilidad."
+        "comment": "Olga fue muy atenta y cariñosa con nuestro perro. Actualizando cada día con fotos y vídeos. Nos sentimos muy seguros dejando a nuestra Nina con ella."
+
     },
     {
-        "name": "Laura Martínez",
+        "name": "Carmen",
         "stars": 5,
-        "comment": "Profesional, puntual y cariñosa. Mi perro la adora y yo estoy muy tranquila sabiendo que está en buenas manos. Los informes diarios son muy detallados."
+        "comment": "Olga como siempre a sido una profesional. Estamos encantados con ella."
+
     },
+
     {
-        "name": "Isabel Sánchez",
+        "name": "Antonio",
         "stars": 5,
-        "comment": "Olga es maravillosa con los perros. Como dueña de dos pastores alemanes muy activos, necesitaba alguien con experiencia y conocimientos. Su formación veterinaria hace la diferencia."
+        "comment": "He vuelto a confiar en Olga para que pasee a Puchi y estoy muy contento con sus servicios. Fue puntual y en todo momento me estuvo mando fotos y videos de mi peludo. Lo cual demuestra que estuvo en buenas manos. Sin duda recomiendo sus servicios como paseadora de perros. ¡Mil gracias por cuidar de mi Puchi!"
+
     },
+
+    
     {
-        "name": "Javier López",
-        "stars": 4,
-        "comment": "Muy contento con los paseos de Olga. Siempre llega a tiempo y trata a los perros con mucho cariño. Solo me gustaría que los paseos fueran un poco más largos."
-    },
-    {
-        "name": "Sofía Torres",
+        "name": "Carmen",
         "stars": 5,
-        "comment": "Excelente servicio. Olga es muy paciente y profesional. Mi perro es un poco nervioso, pero con ella se siente seguro."
+        "comment": "He vuelto a confiar en Olga para que pasee a Puchi y estoy muy contento con sus servicios. Fue puntual y en todo momento me estuvo mando fotos y videos de mi peludo. Lo cual demuestra que estuvo en buenas manos. Sin duda recomiendo sus servicios como paseadora de perros. ¡Mil gracias por cuidar de mi Puchi!"
+
     },
+
     {
-        "name": "Pedro Fernández",
+        "name": "Marisa",
         "stars": 5,
-        "comment": "Olga ha sido increíble con mis dos perros. Siempre me mantiene informado con fotos y mensajes. ¡Muy recomendable!"
+        "comment": "La experiencia de guardería de día con Olga ha sido muy positiva para mi Border Collie Lagun. Olga es una cuidadora responsable, cariñosa y atenta a las necesidades de Lagun. También me ha enviado fotos y videos de sus largos paseos y la estancia a lo largo del día. Ya ha estado en dos ocasiones ocasiones con ella y repetiremos seguro. Lagun y yo os la recomendamos."
+
     },
+    
     {
-        "name": "Ana Morales",
-        "stars": 4,
-        "comment": "Mi perro siempre vuelve feliz de sus paseos. Olga tiene una conexión especial con los animales. Solo me gustaría que también ofreciera servicio de adiestramiento."
-    },
-    {
-        "name": "Miguel Ramírez",
+        "name": "Eva Maria",
         "stars": 5,
-        "comment": "Olga es una excelente profesional. Puntual, amable y siempre preocupada por el bienestar de mi perro. ¡Muy satisfecha con su servicio!"
+        "comment": "Hemos dejado a Olga con nuestra cachorra 4 días, y nos ha tenido informados en todo momento, la ha cuidado súper bien, la ha dado muy buenos paseos y hemos estado muy tranquilos, sin duda si en algún momento necesito que alguien cuide a mi perrita va a ser Olga, porque es una profesional en el mundo de los perros. Y porque he notado que mu perra ha estado muy agusto."
+
     },
+
     {
-        "name": "Camila Vega",
+        "name": "Cristina",
         "stars": 5,
-        "comment": "Olga es increíble. Mi perro era un poco tímido, pero ahora corre feliz cada vez que la ve llegar. ¡Gracias, Olga!"
+        "comment": "Mi perrita es muy miedosa y se va tan contenta con Olga"
+
+
+
     },
+
     {
-        "name": "Diego Herrera",
+        "name": "Maribel",
         "stars": 5,
-        "comment": "Confío plenamente en Olga. Sus informes diarios me dan mucha tranquilidad y siempre se adapta a las necesidades de mis perros."
+        "comment": "Ha sido la primera vez que dejábamos a Bobby y la experiencia no ha podido ser mejor. Olga es una cuidadora de 10. Se preocupó antes de quedarse con Bobby de tener toda la información para cuidarle lo mejor posible, y durante su estancia con ella, nos ha ido informando puntualmente con mensajes y vídeos. Bobby ha estado tratado como en casa y ha paseado y jugado mucho con Olga. Seguro que repetiremos, la experiencia la ha sido muy buena, muchas gracias Olga!."
+
     },
+    
     {
-        "name": "Paula Reyes",
-        "stars": 4,
-        "comment": "Muy buena paseadora. Siempre llega a tiempo y trata a los perros como si fueran suyos. Solo me gustaría que los precios fueran un poco más accesibles."
-    },
-    {
-        "name": "Juan Pérez",
+        "name": "Maria",
         "stars": 5,
-        "comment": "Olga es fantástica. Siempre llega con una gran sonrisa y mi perro la adora. Los paseos son largos y siempre vuelve cansado y feliz."
+        "comment": "Muy contenta con Olga, súper pendiente de Trufa"
     },
+
     {
-        "name": "Clara Ríos",
+        "name": "Ángel",
         "stars": 5,
-        "comment": "Olga es simplemente la mejor. Mi perro es parte de mi familia y ella lo trata como si fuera suyo. No podría pedir nada más."
-    }
+        "comment": "Gran cuidadora. En todo momento ha estado atenta y nos ha mantenido al tanto de cómo estaba Max con vídeos y fotos. Se nota que le gustan mucho los perros y nuestro bichón ha estado con un rey con ella"
+
+    },
+
+    {
+        "name": "jorge",
+        "stars": 5,
+        "comment": "Hemos dejado a Cuca con Olga este fin de semana y tanto Cuca como nosotros hemos estado tranquilos y encantados… Se interesó desde el inicio por las costumbres de Cuca para que estuviera lo mas a gusto posible. Ha estado muy bien cuidada y han dado largos paseos. Hemos estado informados con fotos y videos durante todo el fin se semana. Ha sido un acierto elegirla."
+
+    },
+
+        {
+        "name": "Antonio",
+        "stars": 5,
+        "comment": "Olga es muy profesional. Es una chica muy maja y agradable, se nota que le encantan los animales. No he podido encontrar una mejor paseadora para Puchi. Muchas Gracias."
+
+    },
+
+
+
 ]
