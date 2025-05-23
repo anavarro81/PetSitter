@@ -476,6 +476,15 @@ body {
 
 /* Bellow 544px  phones */
 @media (max-width: 34em) {
+
+
+  .vet-section-five__frist-block {
+    width: 100%;
+    padding: 8.7rem 2rem 8rem 2rem;
+    align-items: center;
+    gap: 2,5rem;
+  }
+
   .vet_aboutMe_containner {
     flex-direction: column;
     align-items: center;
@@ -487,5 +496,44 @@ body {
   }
   .vet-footer--social {
     margin-top: 5rem;
+  }
+
+  /** About Me section **/
+
+  .vet-contact--button-whatsapp--container {
+    width: 100%;
+    display: block;    
+  }
+
+  .vet-contact--button-whatsapp {
+    padding: 2.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      /* align-items: center;
+      gap: 1.5rem;
+      padding: 2.3rem;
+      background-color: var(--Violet-400);
+      border-radius: 10rem;
+      color: #fff; */
+
+
+  }
+
+  /** section five **/  
+
+  .vet-aboutMe_right_side--dwnloadButton--container
+   {
+    width: 100%;
+    display: block;    
+  }
+
+  .vet_aboutMe_right_side--dwnloadButton {
+  justify-content: center; 
+
+  }
+
+  .vet_aboutMe_left_side {
+    width: 100%;
+
   }
 }
