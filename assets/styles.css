@@ -90,6 +90,11 @@ body > div {
   margin-bottom: 4rem;
 }
 
+/* Remover margin header*/
+body > div:first-of-type {
+  margin-bottom: none;
+}
+
 .section-filler {
   width: 100%;
   height: 30rem;
