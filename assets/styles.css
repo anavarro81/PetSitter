@@ -151,6 +151,14 @@ body > div:first-of-type {
   line-height: 2.2rem;
 }
 
+.vet_sub2 {
+  font-family: var(--secundary-font);
+  font-weight: 600;
+  font-size: 2.5rem;
+  
+
+}
+
 .vet-section-two--first-block--icon img {
   max-width: 16.7rem;
   height: auto;
@@ -317,7 +325,10 @@ body > div:first-of-type {
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
+  padding-top: 10rem;
 }
+
+
 
 .vet-section-two__image-overlay {
   position: absolute;
@@ -349,6 +360,10 @@ body > div:first-of-type {
 
 .vet-section-two--pagination {
   height: 11.8rem;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  padding-top: 3rem;
 }
 
 .vet-section-two--second-block--element {
@@ -383,7 +398,26 @@ body > div:first-of-type {
   gap: 2.5rem; /* Espacio entre celdas (opcional) */
 }
 
-/* TODO */
+.vet-section-two--pag-btn {
+  background-color: var(--Violet-0);  
+  border-radius: 0.9rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  color: var(--Violet-400);
+  cursor: pointer;
+}
+
+.vet-section-two--pag-btn-active {
+  background-color: var(--Violet-400);  
+  color: white;
+
+}
+
+.ellipsis {
+  display: flex;
+  justify-content: end;
+  background-color: red;
+} 
 /**************************** About Me section  **************************************/
 
 .vet_aboutMe_containner {
@@ -589,6 +623,28 @@ body > div:first-of-type {
   .vet-contact--button-whatsapp {
     padding: 1.7rem;
   }
+
+  .vet-section-one__first-block--img:last-of-type {
+    width: 100%;
+
+  }
+
+  .vet-section-one__second-block {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .vet-section-one__second-block > div {
+    width: 100%;
+  }
+
+  .vet-section-two--inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
 }
 
 /* Bellow 1200px Land Scape tablets */
@@ -660,6 +716,9 @@ body > div:first-of-type {
       width: 2.5rem;
     }
   }
+
+
+
 
   .vet-section-five__frist-block {
     width: 100%;
