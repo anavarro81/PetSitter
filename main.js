@@ -2,20 +2,36 @@
 
 
 let pagination$$ =document.getElementById("pagination");
+const commentaryWrapper = document.getElementById('commentary-block-89');
+
 let pageButtons$$ = document.getElementsByClassName("vet-section-two--pag-btn")
+const prevButton = ` <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.375 26.25L13.625 17.5L22.375 8.75" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg`
+const nextButton = `<svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.625 26.25L22.375 17.5L13.625 8.75" stroke="#44074A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> `
 
 
-console.log('botones =', pageButtons$$.length)
+const testimonialperpage = 4
+let currentPage = 1
+const totalPages = Math.ceil(commentsData.length / testimonialperpage);
+
 
 const showPage = (actPage) => {  
-  const commentaryWrapper = document.getElementById('commentary-block-89');
+  
+  console.log('actPage ', actPage)
   
   commentaryWrapper.innerHTML = ""
   
   let startPage = (actPage - 1) * testimonialperpage
   let endPage = (actPage * testimonialperpage) - 1
+
+  console.log('startPage ', startPage);
+  console.log('endPage ',  endPage);
   
-  for (i=startPage; i <= endPage; i++) {  
+  
+  for (let i=startPage; i <= endPage; i++) {  
     const { name, stars, comment } = commentsData[i]
     commentaryWrapper.innerHTML += getTestimonialBox(name, stars, comment);
   } 
@@ -25,19 +41,58 @@ const showPage = (actPage) => {
 }
 
 
+const loadPaginationButtons = () => {
 
-const setCurrentPageBtnActive = (nPage) => {
+  pagesAmount = commentsData.length / testimonialperpage   
 
-  let pageButtons$$ = document.getElementsByClassName("vet-section-two--pag-btn")
+  pagination$$.innerHTML = ""
+  
+
+  // Si es menos de una página no muestro botones
+  if (totalPages < 1) {
+    return
+  }
+
+  if (totalPages > 1 &&  totalPages <= 3) {
+
+    
+
+    for (let i=0; i < totalPages-3; i++) {
+      const btn = generateNewButton(i, () => showPage(i), false, i== 0? true: false)
+      pagination$$.appendChild(btn)
+      commentaryWrapper.innerHTML += getTestimonialBox(name, stars, comment);
+    }
+
+    // label, onClick, disable = false, isActve = false
+  }
+
+  
+  
+  if (totalPages > 3) {
+    let btn = generateNewButton('prev', () => showPage(currentPage-1), false, false)
+    pagination$$.appendChild(btn)
+
+    for (let i=1; i<=3; i++) {
+      let btn = generateNewButton(i, () => showPage(i), false , i ==0 ? true : false )       
+      pagination$$.appendChild(btn)     
+    }
+
+    console.log('')
+
+    btn = generateNewButton('next', () => showPage(currentPage+1), true)
+    pagination$$.appendChild(btn)
+  }
+
+}
+
+
+const setCurrentPageBtnActive = (nPage) => {  
 
   // Se convierte a array para poder recorrerlo con forEach
   const pageButtons = Array.from(
     document.getElementsByClassName("vet-section-two--pag-btn")
   );
 
-  console.log ('butons ', pageButtons$$)
-
-  console.log ('tamaño: ', pageButtons$$.length)
   
   pageButtons.forEach((btn) => {
     
@@ -51,7 +106,7 @@ const setCurrentPageBtnActive = (nPage) => {
 }
 
 
-const testimonialperpage = 4
+
 
 const getTestimonialBox = (name, stars, comment) => {
 
@@ -79,13 +134,13 @@ const calcNumPage = (testimonials) => {
 
   switch (pages) {
   case pages < 1:
-    console.log('no se mostrará paginación')
+    
     break;
   case (pages > 1 && pages <=3):    
-    console.log('Mostrar hasta tres elementos')
+    
     break
   default:
-    console.log('Mostrar paginacion completa')    
+    
     break;
 }
 
@@ -93,21 +148,42 @@ const calcNumPage = (testimonials) => {
 
 }
 
-const generateNewButton = (btnNumber) => {
-
-  return ` <button class="vet-section-two--pag-btn vet-section-two--pag-btn-active">
-                <span class="vet_sub2"> ${btnNumber} </span>
-              </button> `
+const generateNewButton = (label, onClick, disable = false, isActive = false) => {
 
 
+  if (typeof label === 'number') {
+    const btn = document.createElement('button')  
+    btn.className = `vet-section-two--pag-btn  ${isActive ? 'vet-section-two--pag-btn-active' : ''}`
+    btn.disabled = disable
+    btn.innerHTML = `<span class="vet_sub2"> ${label} </span>` 
+    btn.onclick = onClick
+    return btn
+  } else if (label === 'prev') 
+    {
+      const arrow = document.createElement('div')  
+      arrow.innerHTML = prevButton        
+      return arrow
+    } else {
+      const arrow = document.createElement('div')  
+      arrow.innerHTML = nextButton        
+      return arrow
+    }
 
-}
+  }
+
+
+  
+
+
+
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  loadPaginationButtons()
   showPage(1)
+  
   
 })
 
