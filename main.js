@@ -7,7 +7,7 @@ const commentaryWrapper = document.getElementById('commentary-block-89');
 let pageButtons$$ = document.getElementsByClassName("vet-section-two--pag-btn")
 const prevButton = ` <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.375 26.25L13.625 17.5L22.375 8.75" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg`
+                    </svg>`
 const nextButton = `<svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.625 26.25L22.375 17.5L13.625 8.75" stroke="#44074A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg> `
@@ -19,19 +19,47 @@ const totalPages = Math.ceil(commentsData.length / testimonialperpage);
 
 
 const showPage = (actPage) => {  
-  
+
   console.log('actPage ', actPage)
+  
+  // Evita que consulte páginas que no existan. 
+  if (actPage < 1 || actPage > totalPages) return; 
+
+  currentPage = actPage
+  
+  if (currentPage == 1) {    
+    const prevSvg = document.querySelector('#prevBtn svg');
+    prevSvg.setAttribute('stroke', '#444444')
+  } else {    
+    const prevSvg = document.querySelector('#prevBtn svg');    
+    prevSvg.setAttribute('stroke', 'red')
+    
+  }
+
+  if (currentPage == totalPages) {
+    const nextBtn = document.getElementById('nextBtn')
+    nextBtn.disabled = true
+    
+  }
+ 
+  
+  
+  
   
   commentaryWrapper.innerHTML = ""
   
   let startPage = (actPage - 1) * testimonialperpage
   let endPage = (actPage * testimonialperpage) - 1
 
-  console.log('startPage ', startPage);
-  console.log('endPage ',  endPage);
   
+
+  console.log('startPage ', startPage)
+  console.log('endPage ', endPage)
+  console.log('commentsData  > ', commentsData.length )
+
   
-  for (let i=startPage; i <= endPage; i++) {  
+  // Se verifica que el indice sea menor que el numeo de testimonios y menor que el numero total de registros
+  for (let i=startPage; i <= endPage && i < commentsData.length; i++) {  
     const { name, stars, comment } = commentsData[i]
     commentaryWrapper.innerHTML += getTestimonialBox(name, stars, comment);
   } 
@@ -43,7 +71,9 @@ const showPage = (actPage) => {
 
 const loadPaginationButtons = () => {
 
-  pagesAmount = commentsData.length / testimonialperpage   
+  const totalPages = Math.ceil(commentsData.length / testimonialperpage)
+  
+  
 
   pagination$$.innerHTML = ""
   
@@ -69,6 +99,7 @@ const loadPaginationButtons = () => {
   
   
   if (totalPages > 3) {
+    
     let btn = generateNewButton('prev', () => showPage(currentPage-1), false, false)
     pagination$$.appendChild(btn)
 
@@ -77,7 +108,18 @@ const loadPaginationButtons = () => {
       pagination$$.appendChild(btn)     
     }
 
-    console.log('')
+    const ellipsis = document.createElement('div')
+    ellipsis.innerHTML = "<span class='vet_sub2'> ... </span>"
+    pagination$$.appendChild(ellipsis)
+
+    // Boton para la última página. 
+    btn = generateNewButton(totalPages, () => showPage(totalPages), false , true )
+    pagination$$.appendChild(btn)
+
+
+
+
+    
 
     btn = generateNewButton('next', () => showPage(currentPage+1), true)
     pagination$$.appendChild(btn)
@@ -87,6 +129,8 @@ const loadPaginationButtons = () => {
 
 
 const setCurrentPageBtnActive = (nPage) => {  
+
+  
 
   // Se convierte a array para poder recorrerlo con forEach
   const pageButtons = Array.from(
@@ -160,12 +204,16 @@ const generateNewButton = (label, onClick, disable = false, isActive = false) =>
     return btn
   } else if (label === 'prev') 
     {
-      const arrow = document.createElement('div')  
-      arrow.innerHTML = prevButton        
+      const arrow = document.createElement('btn')  
+      arrow.innerHTML = prevButton
+      arrow.onclick = onClick
+      arrow.id = 'prevBtn'        
       return arrow
     } else {
-      const arrow = document.createElement('div')  
+      const arrow = document.createElement('btn')  
       arrow.innerHTML = nextButton        
+      arrow.onclick = onClick
+      arrow.id = 'nextBtn' 
       return arrow
     }
 
