@@ -1,6 +1,4 @@
 // import commentsData from './data/comment.js';
-
-
 let pagination$$ =document.getElementById("pagination");
 const commentaryWrapper = document.getElementById('commentary-block-89');
 
@@ -12,10 +10,37 @@ const nextButton = `<svg width="36" height="35" viewBox="0 0 36 35" fill="none" 
                     <path d="M13.625 26.25L22.375 17.5L13.625 8.75" stroke="#44074A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg> `
 
+const mobileMenu$$ = document.getElementById('mobileMenu')
+
+const linea1$$ = document.getElementById("line1")
+const linea2$$ = document.getElementById("line2")
+const linea3$$ = document.getElementById("line3")
+
+
 
 const testimonialperpage = 4
 let currentPage = 1
 const totalPages = Math.ceil(commentsData.length / testimonialperpage);
+
+
+const showMenu = () => {
+  
+  if (mobileMenu$$.style.display == "none") {
+     mobileMenu$$.style.display = "block"     
+     linea1$$.style.transform = "rotate(45deg)"
+     linea2$$.style.transform = "scaleY(0)"
+     linea3$$.style.transform = "rotate(-45deg)"
+  } else {
+    mobileMenu$$.style.display = "none"
+     linea1$$.style.transform = "rotate(0deg)"
+     linea2$$.style.transform = "scaleY(1)"
+     linea3$$.style.transform = "rotate(0deg)"
+
+  }
+
+
+}
+
 
 
 const showPage = (actPage) => {  
