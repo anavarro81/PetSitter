@@ -26,45 +26,17 @@
 
         <div class="vet-header-wrapper">
 
-          <div class="vet-header__logo">
-            <a href="index.html">
-              <img src="public/images/logo.webp" alt="Logo" />
-            </a>
-          </div>
+          <div class="vet-header-wrapper-inner"> 
 
-          <ul class="vet-header__nav">
-            <li>
-              <a href="#testimonios">Testimonios</a>
-            </li>
-            <li>
-              <a href="#servicios">Servicios</a>
-            </li>
-            <li>
-              <a href="#sobreMi">Sobre mi</a>
-            </li>
-          </ul>
-          <div class="vet-header__toggle">
-            <button
-              id="burger-menu-btn"
-              class="menu"
-              onclick="showMenu()" 
-              aria-label="Main Menu"
-            >
-            <div class="button-container">
-              <div class="hamburger-lines">
-                <span class="line line1" id="line1"></span>
-                <span class="line line2" id="line2"></span>
-                <span class="line line3" id="line3"></span>
-              </div>
+            <div class="vet-header__logo">
+              <a href="index.html">
+                <img src="public/images/logo.webp" alt="Logo" />
+              </a>
             </div>
-            </button>
 
-        
 
-          </div> 
 
-        <div class="vet-headder-mobile-menu-wrapper" id="mobileMenu"> 
-          <ul>
+            <ul class="vet-header__nav">
               <li>
                 <a href="#testimonios">Testimonios</a>
               </li>
@@ -74,11 +46,45 @@
               <li>
                 <a href="#sobreMi">Sobre mi</a>
               </li>
-          </ul>
-        </div> 
+            </ul>
+            <div class="vet-header__toggle">
+              <button
+                id="burger-menu-btn"
+                class="menu"
+                onclick="showMenu()" 
+                aria-label="Main Menu"
+              >
+              <div class="button-container">
+                <div class="hamburger-lines">
+                  <span class="line line1" id="line1"></span>
+                  <span class="line line2" id="line2"></span>
+                  <span class="line line3" id="line3"></span>
+                </div>
+              </div>
+              </button>
+
+          
+
+            </div> 
+
+          <div class="vet-headder-mobile-menu-wrapper" id="mobileMenu"> 
+            <ul>
+                <li>
+                  <a href="#testimonios">Testimonios</a>
+                </li>
+                <li>
+                  <a href="#servicios">Servicios</a>
+                </li>
+                <li>
+                  <a href="#sobreMi">Sobre mi</a>
+                </li>
+            </ul>
+          </div> 
 
 
-        </div>
+          </div>
+
+          </div>
 
       </div>
     </div>
@@ -463,7 +469,13 @@
       </div>
     </footer>
 
-
+    <button
+      class="btn-scroll-to-top"
+      id="btn-scroll-to-top"
+      onClick="scrollUp()">
+      
+      
+    </button>
 
     <!-- final Testimonios -->
     

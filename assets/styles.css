@@ -8,7 +8,7 @@ Table of Contents
 04. Mobile Menu
 05. -
 06. -
-07. -
+07. Button scroll to up
 08. Media Querys
 09. -
 10. -
@@ -237,15 +237,34 @@ body > div:first-of-type {
 
 /**************************** Header  **************************************/
 
+
 .vet-header-wrapper {
+  position: fixed;
+  top: 0;    
+  width: 100%;
+  left: 0;  
+  z-index: 1000;
+  background-color: white; 
+  
+  border-bottom: 1px solid grey;
+  
+}
+
+.vet-header-wrapper-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
-  position: relative;
-  z-index:20; 
+  padding: 2rem 4.4rem; 
+  
+  
   
 }
+
+
+.border-bottom {
+    border-bottom: var(--borderWidth-thin,1px) solid var(--borderColor-default,var(--color-border-default))!important;
+}
+
 
 .vet-header__nav {
   display: flex;
@@ -324,6 +343,7 @@ body > div:first-of-type {
 
 .vet-section-one--inner {
   padding: var(--primary-padding);
+  
 }
 
 .vet-section-one__first-block--img {
@@ -704,6 +724,21 @@ body > div:first-of-type {
 
 }
 
+/* Button scroll to up  */
+.btn-scroll-to-top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  margin-bottom: 24px;
+  margin-right: 24px;
+  display: none;
+  
+}
+
 /* Bellow 1200px Land Scape tablets */
 /** Media Querys **/
 @media (max-width: 75em) {
@@ -880,4 +915,10 @@ body > div:first-of-type {
   .vet_aboutMe_left_side {
     width: 100%;
   }
+
+  .btn-scroll-to-top {
+    display: block;
+  }
+
+
 }
