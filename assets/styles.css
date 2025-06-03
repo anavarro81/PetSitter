@@ -732,10 +732,13 @@ body > div:first-of-type {
   z-index: 99;
   bottom: 0;
   right: 0;
-  background-color: red;
+  border-radius: 50%;
   margin-bottom: 24px;
   margin-right: 24px;
   display: none;
+  background-color: var(--Violet-400);
+  color: white;
+  cursor: pointer;
   
 }
 
@@ -786,6 +789,10 @@ body > div:first-of-type {
 
   .vet-header__logo img {
     max-width: 18rem;
+  }
+
+  .vet-header-wrapper {
+    position: relative;
   }
 
   /*** Hambuger Menu ***/
