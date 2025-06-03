@@ -303,9 +303,12 @@ body > div:first-of-type {
  font-weight: 400;
  font-size: 1.8rem;
  line-height: 2.2rem;
- 
 
+}
 
+.vet-headder-mobile-menu-wrapper a {
+  color: white;
+  text-decoration: none;
 }
 
 .vet-headder-mobile-menu-wrapper li:first-of-type {

@@ -1,4 +1,4 @@
-const commentsData = [
+export const commentsData = [
     {
         "name": "Carmen",
         "stars": 5,
@@ -91,4 +91,4 @@ const commentsData = [
 
 
 
-]
+];
