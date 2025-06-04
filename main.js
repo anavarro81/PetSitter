@@ -1,6 +1,6 @@
 import { loadPaginationButtons, showPage } from './testimonial.js';
 import {loadMobileBUtton} from './mobileMenu.js'
-import {scrollUp} from './scrollMobilePage.js'
+import {scrollUp, toggleScrollButton} from './scrollMobilePage.js'
 
 const scrollUpButton = document.getElementById('btn-scroll-to-top')
 
@@ -9,18 +9,8 @@ scrollUpButton.addEventListener('click', () => {
   scrollUp()
 })
 
-window.addEventListener('scroll', () => {
-  console.log('He hecho scroll...')
-
-  if (window.scrollY === 0) {
-    scrollUpButton.style.display = 'none'
-  } else if (window.scrollY > 580) {
-    scrollUpButton.style.display = 'block'
-  } 
-
-  console.log('window.scrollY ', window.scrollY)
-
-  
+window.addEventListener('scroll', (scrollUpButton) => {
+  toggleScrollButton()
 
 })
 
