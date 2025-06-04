@@ -9,12 +9,22 @@ scrollUpButton.addEventListener('click', () => {
   scrollUp()
 })
 
+window.addEventListener('scroll', () => {
+  console.log('He hecho scroll...')
 
+  if (window.scrollY === 0) {
+    scrollUpButton.style.display = 'none'
+  } else if (window.scrollY > 580) {
+    scrollUpButton.style.display = 'block'
+  } 
+
+  console.log('window.scrollY ', window.scrollY)
+
+  
+
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  
-  
-
 
   loadMobileBUtton();
   loadPaginationButtons();
@@ -25,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Se oculta el menu movil y se transforma en hamburguesa al pulsar
-// en cualquiera de los links. 
 
 
 

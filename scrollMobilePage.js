@@ -4,3 +4,7 @@ export function scrollUp() {
     behavior: 'smooth'
   });
 }
+
+export function showScrollMenu () {
+    
+}
