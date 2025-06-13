@@ -9,7 +9,7 @@ scrollUpButton.addEventListener('click', () => {
   scrollUp()
 })
 
-window.addEventListener('scroll', (scrollUpButton) => {
+window.addEventListener('scroll', () => {
   toggleScrollButton()
 
 })

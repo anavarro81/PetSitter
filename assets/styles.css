@@ -7,10 +7,10 @@ Table of Contents
 03. Header
 04. Mobile Menu
 05. -
-06. -
+06. Services
 07. Button scroll to up
 08. Media Querys
-09. -
+    - Bellow 544px  phones
 10. -
 -------------------------------------------------------------------------*/
 
@@ -661,7 +661,12 @@ body > div:first-of-type {
 }
 
 .vet-services__first-block {
+  position: relative;
   background-color: #fff;
+}
+
+.dog-sticker--mobile {
+  display: none;
 }
 
 .vet-services__third-block {
@@ -673,7 +678,8 @@ body > div:first-of-type {
   background-color: var(--Orange-100);
 }
 
-.vet-services__third-block--overlay {
+.vet-services__overlay 
+ {  
   position: absolute;
   top: 0;
   right: 5rem;
@@ -887,6 +893,23 @@ body > div:first-of-type {
   }
   .vet-footer--social {
     margin-top: 5rem;
+  }
+
+  /** Services **/
+  .vet-services__blocks {
+    flex-direction: column; 
+  }
+
+  .vet-services--title {
+    margin-bottom: 15rem;
+  }
+  
+  .dog-sticker--desktop {
+    display: none;
+  }
+
+  .dog-sticker--mobile {
+    display: block;
   }
 
   /** About Me section **/
