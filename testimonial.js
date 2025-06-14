@@ -1,4 +1,4 @@
-import { commentsData } from './public/data/comment.js';
+import { commentsData } from './assets/public/data/comment.js';
 
 let pagination$$ =document.getElementById("pagination");
 const commentaryWrapper = document.getElementById('commentary-block-89');
