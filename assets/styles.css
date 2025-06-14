@@ -1,7 +1,24 @@
+/*-------------------------------------------------------------------------
+ 
+Table of Contents
+
+01. General Fonts
+02. Toggle Button
+03. Header
+04. Mobile Menu
+05. -
+06. Services
+07. Button scroll to up
+08. Media Querys
+    - Bellow 544px  phones
+10. -
+-------------------------------------------------------------------------*/
+
 /* Estable medidas en REM */
 html {
   /* 1rem = 10px */
   font-size: 62.5%;
+  scroll-behavior: smooth; /* Scroll suave */
 }
 
 * {
@@ -14,6 +31,12 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root {
@@ -49,6 +72,9 @@ img {
   --max-width: 240rem;
   --content-width: 148rem;
 
+  --primary-padding: 0 4.4rem;
+  --primary-single-padding: 4.4rem;
+
   --primary-font: "Cormorant", serif;
   --secundary-font: "Montserrat", sans-serif;
 }
@@ -62,11 +88,36 @@ img {
 
 .content-wrapper {
   max-width: var(--content-width);
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 body {
   font-family: var(--secundary-font);
   color: var(--B-W-700);
+}
+
+/* Margin entre secciones */
+body > div {
+  margin-bottom: 4rem;
+}
+
+/* Remover margin header*/
+body > div:first-of-type {
+  margin-bottom: none;
+}
+
+.section-filler {
+  width: 100%;
+  height: 30rem;
+}
+
+.flex {
+  display: flex;
 }
 
 /************************************ General Fonts **************************************/
@@ -76,6 +127,12 @@ body {
   font-weight: 700;
   font-size: 8rem;
   line-height: 6.5rem;
+}
+
+.vet_ag-rg1 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 }
 
 .vet_ag-rg2 {
@@ -97,19 +154,184 @@ body {
   line-height: 90%;
 }
 
+.vet_h3 {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 90%;
+}
+
 .vet_reg1 {
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 2.2rem;
 }
 
+.vet_sub2 {
+  font-family: var(--secundary-font);
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.vet-section-two--first-block--icon img {
+  max-width: 16.7rem;
+  height: auto;
+}
+
+/************************ Toggle Button *********************************/
+
+.vet-header__toggle {
+  display: none;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  svg {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
 /* Frame 1000002570 */
+
+/**************************** Header  **************************************/
+
+.vet-header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+
+  border-bottom: 1px solid grey;
+}
+
+.vet-header-wrapper-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4.4rem;
+}
+
+.border-bottom {
+  border-bottom: var(--borderWidth-thin, 1px) solid
+    var(--borderColor-default, var(--color-border-default)) !important;
+}
+
+.vet-header__nav {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.vet-header__nav {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.vet-header-wrapper a {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: var(--B-W-700);
+  text-decoration: none; /* Esto quita el subrayado */
+}
+
+.vet-contact--button-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.3rem;
+  background-color: var(--Violet-400);
+  border-radius: 10rem;
+  color: #fff;
+}
+
+/*****************************Mobile Menu ************************************/
+
+.vet-headder-mobile-menu-wrapper {
+  width: 100%;
+  background-color: #44074a;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: white;
+  display: none;
+  z-index: 50;
+}
+
+.vet-headder-mobile-menu-wrapper ul {
+  list-style-type: none;
+}
+
+.vet-headder-mobile-menu-wrapper li {
+  color: white;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+.vet-headder-mobile-menu-wrapper a {
+  color: white;
+  text-decoration: none;
+}
+
+.vet-headder-mobile-menu-wrapper li:first-of-type {
+  padding-top: 2rem;
+}
 
 /*****************************Section 1************************************/
 
 .vet-header__first-block {
   display: flex;
   gap: 4rem;
+}
+
+.vet-section-one--inner {
+  padding: var(--primary-padding);
 }
 
 .vet-section-one__first-block--img {
@@ -121,6 +343,7 @@ body {
   width: 65%;
   position: relative;
   aspect-ratio: 917/603;
+  padding: 10.6rem 10.5rem;
 }
 
 .vet-section-one__first-block--img:first-of-type img {
@@ -148,8 +371,323 @@ body {
 }
 
 .vet-section-one__second-block > div {
-  width: 50%;
+  width: calc(50% - 2.3rem);
   margin-top: 4rem;
+}
+
+.vet-section-one__first-block--img__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 52.8rem;
+}
+
+/****************TESTIMONIOS*********************************/
+
+.vet-section-two {
+  position: relative;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+}
+
+.vet-section-two__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Green-200);
+  z-index: -1;
+  img {
+    object-fit: cover;
+  }
+}
+
+.vet-section-two--inner {
+  display: flex;
+  padding: var(--primary-padding);
+}
+
+.vet-section-two--first-block {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vet-section-two--second-block {
+  flex: 1;
+  min-height: 80rem;
+}
+
+.vet-section-two--pagination {
+  height: 11.8rem;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  padding: var(--primary-padding);
+  padding-top: 3rem;
+}
+
+.vet-section-two--second-block--element {
+  flex: 1 1 calc(50% - 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background-color: #fff;
+  border-radius: 2.5rem;
+  max-width: 50%;
+  /* min-height: 70rem; */
+}
+
+.vet-section-two--second-block--element__icon {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vet-section-two--second-block--element__ownerName {
+  color: var(--Violet-300);
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.vet-section-two--second-block--grid-container {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;  Dos columnas iguales 
+  grid-template-rows: auto auto;  Dos filas (altura automática) 
+  gap: 2.5rem;  Espacio entre celdas (opcional)  */
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.vet-section-two--pag-btn {
+  background-color: var(--Violet-0);
+  border-radius: 0.9rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  color: var(--Violet-400);
+  cursor: pointer;
+}
+
+.vet-section-two--pag-btn-active {
+  background-color: var(--Violet-400);
+  color: white;
+}
+
+.ellipsis {
+  display: flex;
+  justify-content: end;
+  background-color: red;
+}
+
+.vet-section-one {
+  margin-top: 13rem;
+}
+
+/**************************** About Me section  **************************************/
+
+.vet_aboutMe_containner {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin: 4.4rem 4rem;
+}
+
+.vet_aboutMe_left_side {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  gap: 2.5rem;
+  border: 1px solid #b2b2b2;
+  border-radius: 25px;
+  align-items: center;
+}
+
+.vet_aboutMe_right_side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+  gap: 2.5rem;
+  border: 1px solid #b2b2b2;
+  border-radius: 25px;
+}
+
+.vet_aboutMe_left_side--social {
+  display: flex;
+  gap: 1rem;
+}
+
+.vet-aboutMe_right_side--dwnloadButton--container {
+  display: flex;
+  justify-content: end;
+  margin-top: auto;
+}
+
+.vet_aboutMe_right_side--dwnloadButton {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem 2.5rem;
+  color: var(--Violet-400);
+  border: 1px solid #44074a;
+  border-radius: 100px;
+  align-items: center;
+}
+
+/******************************** section five *****************************************/
+
+.vet-section-five {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 5rem;
+}
+
+.vet-section-five__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Green-200);
+  z-index: -1;
+  img {
+    object-fit: cover;
+  }
+}
+
+.vet-section-five__frist-block {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/******************************** Footer *****************************************/
+
+footer {
+  background-color: var(--Violet-400);
+}
+
+.vet-footer--wrapper {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 6.7rem;
+}
+
+.vet-footer--social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vet-footer--social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  color: white;
+}
+
+.vet-footer--social-item a {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/************************************Services *******************************************/
+
+/* .main-wrapper.vet-services {
+  flex-direction: column;
+  align-items: flex-start;
+} */
+
+.vet-services--inner {
+  padding: var(--primary-padding);
+}
+
+.vet-services__data {
+  position: relative;
+  z-index: -2;
+  background-color: var(--Orange-0);
+  border-radius: 2.5rem;
+  padding-left: 6.3rem;
+  padding-top: 12rem;
+}
+
+.vet-services--title {
+  padding-left: 6.3rem;
+  margin-bottom: 12.2rem;
+}
+
+.vet-services__blocks {
+  display: flex;
+  > div {
+    border-radius: 2.5rem;
+    aspect-ratio: 1/1;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.vet-services__block--inner {
+  max-width: 26rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.vet-services__first-block {
+  position: relative;
+  background-color: #fff;
+}
+
+.dog-sticker--mobile {
+  display: none;
+}
+
+.vet-services__third-block {
+  position: relative;
+  background-color: var(--Orage-300);
+}
+
+.vet-services__second-block {
+  background-color: var(--Orange-100);
+}
+
+.vet-services__overlay {
+  position: absolute;
+  top: 0;
+  right: 5rem;
+  transform: translate(0, -91%);
+  z-index: -1;
 }
 
 /********************************Media Queries *****************************************/
@@ -157,14 +695,70 @@ body {
 /* smaller destoks */
 
 @media (max-width: 82em) {
+  .vet_h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  .vet_ag-rg2 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  /***********************Section 1 **********************/
+  .vet-contact--button-whatsapp {
+    padding: 1.7rem;
+  }
+
+  /* .vet-section-one__first-block--img:last-of-type {
+    width: 100%;
+  } */
+
+  /* .vet-section-one__second-block {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+  /* .vet-section-one__second-block > div {
+    width: 100%;
+  } */
+
+  /* .vet-section-two--inner {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  .vet-section-two--second-block {
+    min-height: 85rem;
+  }
+}
+
+/* Button scroll to up  */
+.btn-scroll-to-top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  margin-right: 24px;
+  display: none;
+  background-color: var(--Violet-400);
+  color: white;
+  cursor: pointer;
 }
 
 /* Bellow 1200px Land Scape tablets */
-
+/** Media Querys **/
 @media (max-width: 75em) {
   html {
     /* 9/16 */
     font-size: 56.25%;
+  }
+  .vet-section-five {
+    min-height: auto;
   }
 }
 
@@ -175,6 +769,65 @@ body {
     /* 8/16 */
     font-size: 50%;
   }
+
+  /*********************header***********************/
+  .vet-header__nav {
+    display: none;
+  }
+
+  .vet-header__toggle {
+    display: block;
+  }
+
+  .vet-headder-mobile-menu-wrapper {
+    display: none;
+  }
+
+  /******************Section 1 ***************************/
+
+  .vet-section-one__first-block--img:first-of-type {
+    padding: 3rem 3rem;
+  }
+
+  /******************Section 2 ***************************/
+
+  .vet-section-two--inner {
+    flex-wrap: wrap;
+  }
+  .vet-section-two--inner {
+    gap: 8rem;
+  }
+
+  .vet-section-two--first-block {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .vet-services__blocks {
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.vet-services__blocks {
+    > div {
+      flex: auto;
+    }
+  }
+
+    .vet-services__blocks > .vet-services__third-block{
+      aspect-ratio: auto;
+      margin-top: 10rem;
+      padding: 5rem;
+    }
+
+    .vet_aboutMe_left_side h2{
+      font-size: 3.5rem;
+    }
+
+    .vet-section-five{
+padding-bottom: 10rem;
+padding-bottom: 10rem;
+    }
 }
 
 /* Bellow 700px  Small tablets */
@@ -183,4 +836,199 @@ body {
 
 /* Bellow 544px  phones */
 @media (max-width: 34em) {
+  /**********************header ***************************/
+  :root {
+    --primary-padding: 3rem;
+    --primary-single-padding: 3rem;
+  }
+
+  .vet-header__logo img {
+    max-width: 18rem;
+  }
+
+  .vet-header-wrapper {
+    position: relative;
+  }
+
+  /*** Hambuger Menu ***/
+  .hamburger-lines {
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 26px;
+    width: 32px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+  }
+
+  .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #0e2431;
+  }
+
+  .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  /***********************Section one ********************/
+
+  .vet-header__first-block {
+    display: flex;
+    gap: 4rem;
+    /* Hace que el contenedor salte a la siguiente fila  */
+    flex-wrap: wrap;
+  }
+
+  .vet-section-one__second-block {
+    gap: unset;
+    flex-wrap: wrap;
+}
+
+  .vet-section-one__first-block--img:last-of-type{
+    width: 100%;
+  }
+
+  .vet-section-one__first-block--img:first-of-type {
+    width: 100%;
+    position: relative;
+    aspect-ratio: unset;
+    padding: 5.9rem 2.3rem;
+    padding-right: 8.9rem;
+  }
+
+  .vet-section-one__first-block--img__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  .vet-section-one__second-block > div {
+    width: 100%;
+    margin-top: 0;
+}
+
+  .vet-section-five__frist-block {
+    width: 100%;
+    padding: 8.7rem 2rem 8rem 2rem;
+    align-items: center;
+    gap: 2, 5rem;
+  }
+
+  .vet-section-one__second-block{
+transform: translateY(-4rem);
+  }
+
+  .vet_aboutMe_containner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vet-section-one__second-block--img:last-of-type img{
+    transform: translateY(-3.9rem);
+  }
+
+  .vet-section-two--second-block--element{
+    width: 100%;
+    flex: unset;
+    max-width: none;
+  }
+
+  .vet-footer--wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vet-footer--social {
+    margin-top: 5rem;
+  }
+
+  .vet-section-two--second-block--grid-container{
+    flex-wrap: wrap;
+  }
+
+  /** Services **/
+  .vet-services__blocks {
+    flex-direction: column;
+  }
+
+  .vet-services--title {
+    margin-bottom: 30rem;
+  }
+
+  .dog-sticker--desktop {
+    display: none;
+  }
+
+  .vet-services__blocks > .vet-services__third-block {
+    margin-top: 0rem;
+}
+
+  .vet-services__blocks {
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+  .dog-sticker--mobile {
+    display: block;
+  }
+
+  /** About Me section **/
+
+  .vet-contact--button-whatsapp--container {
+    width: 100%;
+    display: block;
+  }
+
+  .vet-contact--button-whatsapp {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    /* align-items: center;
+      gap: 1.5rem;
+      padding: 2.3rem;
+      background-color: var(--Violet-400);
+      border-radius: 10rem;
+      color: #fff; */
+  }
+
+  /** section five **/
+
+  .vet-aboutMe_right_side--dwnloadButton--container {
+    width: 100%;
+    display: block;
+  }
+
+  .vet_aboutMe_right_side--dwnloadButton {
+    justify-content: center;
+  }
+
+  .vet_aboutMe_left_side {
+    width: 100%;
+  }
+
+  .btn-scroll-to-top {
+    display: block;
+  }
 }
